@@ -22,8 +22,6 @@ blocks:
     task:
       jobs:
         - name: 'Build Project'
-          commands:
-            - ./gradlew bundle
       epilogue:
         on_pass:
           commands:
@@ -37,12 +35,6 @@ blocks:
       when: "pull_request !~ '.*'"
     task:
       jobs:
-        - name: 'Analyze Code'
-          commands:
-            - ./gradlew lint
-        - name: 'Unit Tests'
-          commands:
-            - ./gradlew test
         - name: 'Integration Tests'
           commands:
             - sdkmanager "platform-tools" "platforms;android-29" "build-tools;30.0.0" "emulator"
