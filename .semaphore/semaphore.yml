@@ -70,3 +70,4 @@ promotions:
     pipeline_file: deploy-beta.yml
     auto_promote:
       when: "result = 'passed' AND branch = 'master'"
+      
