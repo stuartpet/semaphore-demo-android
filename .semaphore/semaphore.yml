@@ -16,15 +16,6 @@ global_job_config:
   env_vars:
     - name: ADB_INSTALL_TIMEOUT
       value: "10"
-  secrets:
-    - name: android_keys
-  prologue:
-    commands:
-      - checkout
-      - mv ~/release-keystore.jks ~/$SEMAPHORE_GIT_DIR/app/release-keystore.jks
-      - cache restore gradle-wrapper
-      - cache restore gradle-cache
-      - cache restore android-build
 
 blocks:
   - name: 'Build'
