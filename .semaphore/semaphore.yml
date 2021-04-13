@@ -22,13 +22,13 @@ blocks:
     task:
       jobs:
         - name: 'Build Project'
-      epilogue:
-        on_pass:
-          commands:
-            - cache clear
-            - cache store gradle-wrapper ~/.gradle/wrapper
-            - cache store gradle-cache ~/.gradle/caches
-            - cache store android-build ~/.android/build-cache
+          epilogue:
+            on_pass:
+              commands:
+                - cache clear
+                  - cache store gradle-wrapper ~/.gradle/wrapper
+                  - cache store gradle-cache ~/.gradle/caches
+                  - cache store android-build ~/.android/build-cache
 
   - name: 'Verification'
     skip:
