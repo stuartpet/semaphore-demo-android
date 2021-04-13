@@ -1,0 +1,12 @@
+{
+  "rules": {
+    "func-names": 0
+  },
+  "globals": {
+    "$": true,
+    "$$": true,
+    "browser": true,
+    "driver": true
+  },
+  "plugins": ["wdio", "import"]
+}
