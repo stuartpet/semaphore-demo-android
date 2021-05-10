@@ -29,8 +29,8 @@ blocks:
             - cache store android-build ~/.android/build-cache
 
   - name: 'Verification'
-    task:
-      jobs:
+      task:
+        prologue:
         - name: 'Integration Tests'
           commands:
             - sdkmanager "platform-tools" "platforms;android-29" "build-tools;30.0.0" "emulator"
@@ -44,7 +44,7 @@ blocks:
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
         jobs:
-         - name: Test Login
+          - name: Test Login
               commands:
                 - bash -c 'Xvfb :0 -screen 0 1024x768x24 & sleep 5 &&
                   yarn login.tests.js'
