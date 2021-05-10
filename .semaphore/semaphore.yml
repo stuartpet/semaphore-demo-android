@@ -43,10 +43,8 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
-      epilogue:
-        always:
-          jobs:
-            - name: 'test biometric login'
+        jobs:
+         - name: 'test biometric login'
           commands:
             -  - bash -c 'Xvfb :0 -screen 0 1024x768x24 & sleep 5 && yarn login.test.js'
             - artifact push job --expire-in 2w --destination reports/ app/build/reports/
