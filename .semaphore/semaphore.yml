@@ -2,7 +2,7 @@ version: v1.0
 name: Verification Pipeline
 agent:
   machine:
-    type: e1-standard-2
+    type: a1-standard-2
     os_image: ubuntu1804
   containers:
     - name: main
@@ -29,7 +29,7 @@ blocks:
             - cache store android-build ~/.android/build-cache
             - checkout
             - cache restore
-            - apt-get install -y npm
+            - npm install
             - cache store
 
 
