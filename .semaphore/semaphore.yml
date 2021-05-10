@@ -27,10 +27,7 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
-            - checkout
-            - cache restore
-            - npm install
-            - cache store
+            - rm -rf node_modules && rm -f package-lock.json && npm install
 
 
   - name: 'Verification'
