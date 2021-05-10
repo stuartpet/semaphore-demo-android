@@ -27,11 +27,6 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
-            - checkout
-            - cache restore
-            - npm install
-            - cache store
-
 
   - name: 'Verification'
     task:
@@ -51,7 +46,7 @@ blocks:
             -  docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - checkout
             - cache restore
-            - npm test login.test.js
+            - test:mocha test
 
 promotions:
   - name: Internal Deploy
