@@ -27,7 +27,10 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
-            - cache npm ci
+            - checkout
+            - cache restore
+            - apt-get install -y npm
+            - cache store
 
 
   - name: 'Verification'
@@ -46,6 +49,8 @@ blocks:
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
             -  docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
+            - checkout
+            - cache restore
             - npm test login.test.js
 
 promotions:
