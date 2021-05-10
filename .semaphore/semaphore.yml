@@ -27,15 +27,10 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
-        - name: Install dependencies
-          task:
-            jobs:
-              - name: npm install and cache
-                commands:
-                  - checkout
-                  - cache restore
-                  - npm install
-                  - cache store
+            - checkout
+            - cache restore
+            - npm install
+            - cache store
 
 
   - name: 'Verification'
