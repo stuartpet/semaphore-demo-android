@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@wdio/cli": "^7.3.0",
-    "appium": "^1.20.2"
+    "appium": "^1.20.2",
+    "gemfile": "^1.1.0"
   }
 }
