@@ -29,7 +29,7 @@ blocks:
             - cache store android-build ~/.android/build-cache
             - checkout
             - cache restore
-            - npm install node-semaphoreci --save
+            - npm install
             - cache store
 
 
