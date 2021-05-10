@@ -44,8 +44,6 @@ blocks:
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
             -  docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
-            - checkout
-            - cache restore
             - test:mocha test
 
 promotions:
