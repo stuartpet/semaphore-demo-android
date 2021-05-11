@@ -46,11 +46,12 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
+            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
-            - cache restore
-            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
-            - npm test
+            - cache restore package.json-$(checksum package-lock.json),package.json-main
+            - apt-get install -y npm
+            - bash -c 'Xvfb :0 -screen 0 1024x768x24 & sleep 5 && npm test'
 
 promotions:
   - name: Internal Deploy
