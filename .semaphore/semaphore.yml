@@ -49,7 +49,7 @@ blocks:
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
             - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
-            - npm test
+            - npm run-script test
 
 promotions:
   - name: Internal Deploy
