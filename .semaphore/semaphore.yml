@@ -8,6 +8,9 @@ agent:
     - name: main
       image: 'registry.semaphoreci.com/android:29'
 
+    - name: node
+      image: registry.semaphoreci.com/node:10
+
 auto_cancel:
   running:
     when: "true"
@@ -44,10 +47,6 @@ blocks:
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
             - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
-            - sudo apt-get install -y nodejs
-            - sudo apt-get update
-            - sudo apt-get install npm
-            - sudo npm install npm --global
             - npm test
 
 promotions:
