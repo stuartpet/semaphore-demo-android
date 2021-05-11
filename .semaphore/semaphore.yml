@@ -30,10 +30,9 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
-            - cache store node-modules-main node_modules
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
-            - apt-get install -y npm
+            - npm test
 
   - name: 'Verification'
     task:
