@@ -7,7 +7,8 @@
     "test": "test"
   },
   "dependencies": {
-    "gemfile": "^1.1.0"
+    "gemfile": "^1.1.0",
+    "mocha": "^8.4.0"
   },
   "devDependencies": {},
   "scripts": {
