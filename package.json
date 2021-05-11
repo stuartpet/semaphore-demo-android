@@ -2,9 +2,9 @@
   "name": "semaphore-demo-android",
   "version": "1.0.0",
   "description": "[![Build Status](https://semaphore-demos.semaphoreci.com/badges/semaphore-demo-android/branches/master.svg)](https://semaphore-demos.semaphoreci.com/projects/semaphore-demo-android)",
-  "main": "../wdio.conf.js",
+  "main": "wdio.conf.js",
   "directories": {
-    "test": "../test"
+    "test": "test"
   },
   "dependencies": {
     "chai": "^4.3.4",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "../node_modules/.bin/mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",

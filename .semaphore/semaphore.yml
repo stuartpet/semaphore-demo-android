@@ -48,6 +48,7 @@ blocks:
             - adb shell settings put global animator_duration_scale 0
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
+            - cache store npm-$SEMAPHORE_GIT_BRANCH-$(checksum package-lock.json)-$(checksum .semaphore/semaphore.yml) ~/.npm
             - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - npm test
 
