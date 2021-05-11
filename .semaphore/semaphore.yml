@@ -49,7 +49,8 @@ blocks:
             - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
-            - cache restore package.json-$(checksum package-lock.json),package.json-main
+            - rm -rf node_modules
+            - npm install
             - bash -c 'Xvfb :0 -screen 0 1024x768x24 & sleep 5 && npm test'
 
 promotions:
