@@ -30,6 +30,8 @@ blocks:
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
+            - cache store node-modules-main node_modules
+            - npm install
 
   - name: 'Verification'
     task:
