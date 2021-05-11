@@ -31,7 +31,8 @@ blocks:
             - cache store gradle-cache ~/.gradle/caches
             - cache store android-build ~/.android/build-cache
             - cache store node-modules-main node_modules
-            - apt-get install -y npm
+            - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+            - apt-get install -y nodejs
 
   - name: 'Verification'
     task:
