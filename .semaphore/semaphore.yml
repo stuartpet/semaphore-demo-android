@@ -50,7 +50,6 @@ blocks:
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
             - cache restore package.json-$(checksum package-lock.json),package.json-main
-            - apt-get install -y npm
             - bash -c 'Xvfb :0 -screen 0 1024x768x24 & sleep 5 && npm test'
 
 promotions:
