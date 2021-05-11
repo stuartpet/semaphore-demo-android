@@ -7,9 +7,11 @@
     "test": "test"
   },
   "dependencies": {
+    "chai": "^4.3.4",
     "gemfile": "^1.1.0",
     "mocha": "^8.4.0",
-    "npm": "^7.12.1"
+    "npm": "^7.12.1",
+    "webdriverio": "^7.5.7"
   },
   "devDependencies": {},
   "scripts": {
