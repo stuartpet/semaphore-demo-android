@@ -33,6 +33,7 @@ blocks:
             - cache store node-modules-main node_modules
             - curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
             - apt-get install -y nodejs
+            - apt-get install -y npm
 
   - name: 'Verification'
     task:
