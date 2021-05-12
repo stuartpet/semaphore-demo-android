@@ -46,6 +46,7 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
+            - adb shell am instrument -w fingerprint_demo.apk
             - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             - apt-get install -y nodejs
             - apt-get install -y yarn
