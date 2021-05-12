@@ -26,7 +26,7 @@ const androidOptions = Object.assign(
         platformVersion:
             process.env.ANDROID_PLATFORM_VERSION ||
             DEFAULT_ANDROID_PLATFORM_VERSION,
-        app: APP_ROOT_PATH + "sp_prod_2021-01-12.apk",
+        app: APP_ROOT_PATH + "fingerprint_demo.apk",
       },
     },
     serverConfig

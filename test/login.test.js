@@ -1,5 +1,5 @@
 const webdriverio = require("webdriverio");
-const androidOptions = require("../helpers/caps").androidOptions;
+const androidOptions = require("../caps").androidOptions;
 const assert = require("chai").assert;
 
 describe("Create Android session", function () {
