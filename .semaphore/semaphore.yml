@@ -26,10 +26,6 @@ blocks:
       jobs:
         - name: 'Build Project'
           commands:
-            - ./gradlew bundle
-      epilogue:
-        on_pass:
-          commands:
             - cache clear
             - cache store gradle-wrapper ~/.gradle/wrapper
             - cache store gradle-cache ~/.gradle/caches
