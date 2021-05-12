@@ -36,6 +36,10 @@ blocks:
       jobs:
         - name: 'Integration Tests'
           commands:
+            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
+            - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+            - apt-get install -y nodejs
+            - apt-get install -y yarn
             - sdkmanager "platform-tools" "platforms;android-29" "build-tools;30.0.0" "emulator"
             - sdkmanager "system-images;android-29;google_apis;x86"
             - echo no | avdmanager create avd -n test-emulator -k "system-images;android-29;google_apis;x86"
@@ -47,10 +51,6 @@ blocks:
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
             - adb shell am instrument -w fingerprint_demo.apk
-            - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-            - apt-get install -y nodejs
-            - apt-get install -y yarn
-            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - yarn run test
 
 promotions:
