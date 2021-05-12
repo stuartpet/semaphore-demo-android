@@ -50,8 +50,7 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
-            - adb shell am instrument -w fingerprint_demo.apk
-            - yarn run test
+            - adb shell am instrument -w fingerprint_demo.apk/yarn run test
 
 promotions:
   - name: Internal Deploy
