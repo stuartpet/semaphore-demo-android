@@ -46,10 +46,10 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
-            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             - apt-get install -y nodejs
             - apt-get install -y yarn
+            - docker run --rm --privileged -d -p 4723:4723  -v /dev/bus/usb:/dev/bus/usb --name container-appium appium/appium
             - yarn run test
 
 promotions:
