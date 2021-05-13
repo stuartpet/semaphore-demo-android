@@ -24,7 +24,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/basic/*.test.js'
+        './test/login.test.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -82,7 +82,7 @@ exports.config = {
     // - @wdio/mocha-framework, @wdio/jasmine-framework
     // - @wdio/local-runner
     // - @wdio/sumologic-reporter
-    // - @wdio/cli, @wdio/config, @wdio/sync, @wdio/utils
+    // - @wdio/cli, @wdio/config, @wdio/utils
     // Level of logging verbosity: trace | debug | info | warn | error | silent
     // logLevels: {
     //     webdriver: 'info',
