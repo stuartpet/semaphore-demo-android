@@ -42,6 +42,7 @@ blocks:
             - apt-get install -y yarn
             - npm install webdriverio
             - npm i selenium-webdriver
+            - npm install fibers
             - sdkmanager "platform-tools" "platforms;android-29" "build-tools;30.0.0" "emulator"
             - sdkmanager "system-images;android-29;google_apis;x86"
             - echo no | avdmanager create avd -n test-emulator -k "system-images;android-29;google_apis;x86"
