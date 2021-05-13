@@ -40,6 +40,8 @@ blocks:
             - curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
             - apt-get install -y nodejs
             - apt-get install -y yarn
+            - npm install webdriverio
+            - npm i selenium-webdriver
             - sdkmanager "platform-tools" "platforms;android-29" "build-tools;30.0.0" "emulator"
             - sdkmanager "system-images;android-29;google_apis;x86"
             - echo no | avdmanager create avd -n test-emulator -k "system-images;android-29;google_apis;x86"
@@ -50,7 +52,8 @@ blocks:
             - adb shell settings put global window_animation_scale 0
             - adb shell settings put global transition_animation_scale 0
             - adb shell settings put global animator_duration_scale 0
-            - adb shell am instrument -w fingerprint_demo.apk/yarn run test
+            - adb shell am instrument -w fingerprint_demo.apk
+            - npm run test -- --spec ./test/login.test.js
 
 promotions:
   - name: Internal Deploy
